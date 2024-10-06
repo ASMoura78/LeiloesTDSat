@@ -23,41 +23,36 @@ public class ProdutosDAO {
     ResultSet resultset;
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
 
-    public void cadastrarProduto(ProdutosDTO produto) throws Exception {
-        try {
-            // Estabelecendo a conexão com o banco de dados
-            conn = connectDB();
-            
-            // SQL para inserir o produto
-            String sql = "INSERT INTO produtos (nome, valor, status) VALUES (?, ?, ?)";
-            prep = conn.prepareStatement(sql);
-            
-            // Definindo os parâmetros
-            prep.setString(1, produto.getNome());
-            prep.setInt(2, produto.getValor());
-            prep.setString(3, produto.getStatus());
-            
-            // Executando a inserção
-            prep.executeUpdate();
-        } catch (SQLException e) {
-            throw new Exception("Erro ao cadastrar produto: " + e.getMessage());
-        } finally {
-            // Fechando os recursos
-            if (prep != null) {
-                try {
-                    prep.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+    public void cadastrarProduto(ProdutosDTO produto) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+
+    try {
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uc11?useSSL=false&autoReconnect=true", "root", "admin");
+        String sql = "INSERT INTO produtos (nome, valor, status) VALUES (?, ?, ?)";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, produto.getNome());
+        stmt.setInt(2, produto.getValor());
+        stmt.setString(3, produto.getStatus());
+        stmt.executeUpdate();
+    } catch (SQLException e) {
+        throw new SQLException("Erro ao cadastrar produto: " + e.getMessage(), e);
+    } finally {
+        if (stmt != null) {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                // Log e ignorar
             }
         }
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                // Log e ignorar
+            }
+        }
+    }
     }
 
     public ArrayList<ProdutosDTO> listarProdutos() {
