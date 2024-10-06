@@ -1,0 +1,23 @@
+[33mcommit 9dec09d4da1b98be9ca7c2bfed7b47a23d191001[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Alan Soares <asmoura1@gmail.com>
+Date:   Sat Oct 5 22:00:14 2024 -0300
+
+    Adicionado a funcionalidade salvar ao botão cadastrar
+
+[33mcommit 8c3a40f1c22a28ea7c4dce35fa5b7510f3c3f0ab[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Alan Soares <asmoura1@gmail.com>
+Date:   Sat Oct 5 20:19:47 2024 -0300
+
+    Definir cadastroVIEW como tela principal
+
+[33mcommit 011c2a5db2f46519e5c465fcf43d253f989cd0cb[m
+Author: Alan Soares <38796413+ASMoura78@users.noreply.github.com>
+Date:   Wed Oct 2 22:36:46 2024 -0300
+
+    Create README.md
+
+[33mcommit 4a425dbcb90b5bdf3ca81d346d86a7b50638c4f3[m
+Author: Alan Soares <asmoura1@gmail.com>
+Date:   Wed Oct 2 21:54:25 2024 -0300
+
+    Projeto inicial
