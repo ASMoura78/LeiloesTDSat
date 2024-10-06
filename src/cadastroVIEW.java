@@ -158,7 +158,6 @@ public class cadastroVIEW extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao realizar cadastro: " + e.getMessage());
         }
 
-
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
