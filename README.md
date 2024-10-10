@@ -13,12 +13,27 @@ Este relatório apresenta as evidências de versionamento do projeto, destacando
 Utilizei o Git como sistema de controle de versão. As evidências foram coletadas a partir dos logs de commits no GitHub.
 
 ## Commits e Alterações
-### Commit 1: Adição de funcionalidade X
+### Commit 1: Definindo  tela cadastroVIEW como tela principal
 - **Autor**: Alan Soares
-- **Data**: 05/02/2024
-- **Mensagem**: "Adiciona funcionalidade X para melhorar a performance"
+- **Data**: 05/10/2024
+  
+### Commit 2: Adicionando a funcionalidade "SALVAR" ao botão cadastrar.
+- **Autor**: Alan Soares
+- **Data**: 05/10/2024
+- 
+### Commit 3: Atualizaçao do código na classe produtosDAO.
+- **Autor**: Alan Soares
+- **Data**: 05/10/2024
 
-### Commit 2: Correção de bug Y
-- **Autor**: Maria Souza
-- **Data**: 20/02/2024
-- **Mensagem**: "Corrige bug Y que causava falha na inicialização"
+### Commit 4: Atualizaçao do código na classe produtosDAO para listar os produtos.
+- **Autor**: Alan Soares
+- **Data**: 06/10/2024
+  
+### Commit 5: Correçao do bug na tela principal ao clicar no botão cadastrar produto.
+- **Autor**: Alan Soares
+- **Data**: 06/10/2024
+
+### Commit 6: Correçao do bug na tela principal ao clicar no botão consultar produto.
+- **Autor**: Alan Soares
+- **Data**: 06/10/2024
+
