@@ -57,12 +57,16 @@ public class ProdutosDAO {
 
     public ArrayList<ProdutosDTO> listarProdutos() {
         ArrayList<ProdutosDTO> listagem = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement prep = null;
+        ResultSet resultset = null;
+
         try {
             conn = connectDB();
             String sql = "SELECT * FROM produtos";
             prep = conn.prepareStatement(sql);
             resultset = prep.executeQuery();
-            
+
             while (resultset.next()) {
                 ProdutosDTO produto = new ProdutosDTO();
                 produto.setId(resultset.getInt("id"));
@@ -101,14 +105,15 @@ public class ProdutosDAO {
 
     private Connection connectDB() {
         Connection conn = null;
-        
+
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/uc11?user=root&password=admin");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/uc11?useSSL=false&requireSSL=false&autoReconnect=true", "root", "admin");
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro ConectaDAO: " + erro.getMessage());
         }
         return conn;
     }
+
 }
 
 
