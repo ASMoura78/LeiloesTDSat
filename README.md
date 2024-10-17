@@ -1,4 +1,4 @@
-Nome do projeto: LeilõesTDSat
+Nome do Projeto: LeilõesTDSat
 
 Explicação sobre o que se trata o projeto: Sistema informatizado para gerenciamento de leilões, incluindo funcionalidades de cadastro, consulta e realização de leilões online.
 
