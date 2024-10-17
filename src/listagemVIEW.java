@@ -62,9 +62,12 @@ public class listagemVIEW extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         jLabel2.setText("Vender Produto (ID)");
 
+        id_produto_venda.setToolTipText("Digite aqui o ID do produto a ser vendido.");
         jScrollPane2.setViewportView(id_produto_venda);
 
         btnVender.setText("Vender");
+        btnVender.setToolTipText("Clique aqui para vender o produto selecionado.");
+        btnVender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVenderActionPerformed(evt);
@@ -72,6 +75,8 @@ public class listagemVIEW extends javax.swing.JFrame {
         });
 
         btnVendas.setText("Consultar Vendas");
+        btnVendas.setToolTipText("Clique aqui para consultar os produtos vendidos.");
+        btnVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVendasActionPerformed(evt);
@@ -79,6 +84,8 @@ public class listagemVIEW extends javax.swing.JFrame {
         });
 
         btnVoltar.setText("Voltar");
+        btnVoltar.setToolTipText("Clique aqui para voltar para tela anterior.");
+        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarActionPerformed(evt);
@@ -133,6 +140,7 @@ public class listagemVIEW extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
