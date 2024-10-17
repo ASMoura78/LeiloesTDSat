@@ -1,10 +1,10 @@
-Nome do Projeto: LeilõesTDSat
+# Nome do Projeto: LeilõesTDSat
 
 Explicação sobre o que se trata o projeto: Sistema informatizado para gerenciamento de leilões, incluindo funcionalidades de cadastro, consulta e realização de leilões online.
 
 Tecnologias utilizadas: Java, MySQL, Apache NetBeans e Git Bash
 
-Relatório de Versionamento
+# Relatório de Versionamento
 
 ## Introdução
 Este relatório apresenta as evidências de versionamento do projeto, destacando as principais alterações e a evolução do código.
