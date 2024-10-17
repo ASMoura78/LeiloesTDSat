@@ -15,7 +15,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.sql.SQLException;
 
-
 public class ProdutosDAO {
 
     Connection conn;
@@ -24,35 +23,35 @@ public class ProdutosDAO {
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
 
     public void cadastrarProduto(ProdutosDTO produto) throws SQLException {
-    Connection conn = null;
-    PreparedStatement stmt = null;
+        Connection conn = null;
+        PreparedStatement stmt = null;
 
-    try {
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uc11?useSSL=false&autoReconnect=true", "root", "admin");
-        String sql = "INSERT INTO produtos (nome, valor, status) VALUES (?, ?, ?)";
-        stmt = conn.prepareStatement(sql);
-        stmt.setString(1, produto.getNome());
-        stmt.setInt(2, produto.getValor());
-        stmt.setString(3, produto.getStatus());
-        stmt.executeUpdate();
-    } catch (SQLException e) {
-        throw new SQLException("Erro ao cadastrar produto: " + e.getMessage(), e);
-    } finally {
-        if (stmt != null) {
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                // Log e ignorar
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uc11?useSSL=false&autoReconnect=true", "root", "admin");
+            String sql = "INSERT INTO produtos (nome, valor, status) VALUES (?, ?, ?)";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, produto.getNome());
+            stmt.setInt(2, produto.getValor());
+            stmt.setString(3, produto.getStatus());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new SQLException("Erro ao cadastrar produto: " + e.getMessage(), e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    // Log e ignorar
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    // Log e ignorar
+                }
             }
         }
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                // Log e ignorar
-            }
-        }
-    }
     }
 
     public ArrayList<ProdutosDTO> listarProdutos() {
@@ -114,7 +113,13 @@ public class ProdutosDAO {
         return conn;
     }
 
+    public void venderProduto(int produtoId) {
+        String sql = "UPDATE produtos SET status = 'Vendido' WHERE id = ?";
+        try (Connection conn = this.connectDB(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, produtoId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
-
-
-
